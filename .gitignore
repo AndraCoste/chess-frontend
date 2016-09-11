@@ -1,0 +1,9 @@
+
+.gitignore
+.idea/chess-meteor.iml
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+node_modules
