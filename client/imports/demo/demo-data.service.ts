@@ -9,7 +9,12 @@ export class DemoDataService {
   private data : Mongo.Cursor<DemoDataObject>;
 
   constructor() {
-    this.data = DemoCollection.find({});
+
+    Meteor.subscribe('demo', () => {
+      this.data = DemoCollection.find();
+    });
+
+    // this.data = DemoCollection.find({});
   }
 
   public getData() : Mongo.Cursor<DemoDataObject> {
