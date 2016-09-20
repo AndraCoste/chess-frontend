@@ -25,6 +25,15 @@ export class ArticleStartup {
                 image: null,
                 selector: "ma-ta"
             });
+
+
+            ArticleCollection.insert(<ArticleDataObject>{
+                title: "Înscriere",
+                author: null,
+                body: " 123 Liga Studenților din Facultatea de Automatică și Calculatoare (Liga AC) este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
+                image: null,
+                selector: "registration"
+            });
         }
     }
 }
