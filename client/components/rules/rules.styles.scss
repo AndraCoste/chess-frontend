@@ -1,9 +1,22 @@
-/**
- * Created by NM on 10/2/2016.
- */
-
 @import "../../vars";
 
 .rules-component {
   background: $grey;
+
+  .row {
+
+    .icon {
+      background: url("./img/notepad.svg")  no-repeat top center;
+    }
+
+    @media (min-width: (768px) ){
+      .content {
+        order: 1;
+      }
+      .icon {
+        order: 2;
+      }
+    }
+  }
+
 }
