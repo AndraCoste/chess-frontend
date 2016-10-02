@@ -1,18 +1,20 @@
-import {Component, NgZone} from "@angular/core";
-import {MeteorComponent} from "angular2-meteor";
-//noinspection TypeScriptCheckImport
-import template from "./about-liga-ac.template.html";
-import {ArticleDataObject} from "../../../both/models/article-data-object";
-import {ArticleCollection} from "../../../both/collections/arrticle-collection";
+/**
+ * Created by NM on 10/2/2016.
+ */
 
+import {ArticleDataObject} from "../../../both/models/article-data-object";
+import {MeteorComponent} from "angular2-meteor";
+import {ArticleCollection} from "../../../both/collections/arrticle-collection";
+import {Component} from "@angular/core";
+//noinspection TypeScriptCheckImport
+import template from "./rules.template.html";
 
 @Component({
-    selector: 'about-liga-ac',
+    selector: 'rules',
     template,
     providers: []
 })
-export class AboutLigaAC extends MeteorComponent {
-    greeting: string;
+export class RulesComponent extends MeteorComponent {
 
     private data: ArticleDataObject = {
         title: null,
@@ -25,12 +27,9 @@ export class AboutLigaAC extends MeteorComponent {
 
     constructor() {
         super();
-
-
-        Meteor.subscribe('article', 'about-liga-ac', () => {
-            var article = ArticleCollection.findOne({selector: "about-liga-ac"});
+        Meteor.subscribe('article', 'rules', () => {
+            var article = ArticleCollection.findOne({selector: "rules"});
             this.data = article ? article : this.data;
         });
-
     }
 }

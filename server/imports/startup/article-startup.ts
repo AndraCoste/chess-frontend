@@ -34,6 +34,14 @@ export class ArticleStartup {
                 image: null,
                 selector: "registration"
             });
+
+            ArticleCollection.insert(<ArticleDataObject>{
+                title: "Regulament",
+                author: null,
+                body: " Regulament ....  este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
+                image: null,
+                selector: "rules"
+            });
         }
     }
 }

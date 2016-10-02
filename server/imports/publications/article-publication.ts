@@ -12,6 +12,7 @@ function buildQuery(articleName?: string): Object {
 
 
 
-Meteor.publish('article', function(articleName: string) {
-    return ArticleCollection.find(buildQuery.call(this, articleName));
+Meteor.publish('article', function(selector: string) {
+    console.log(selector);
+    return ArticleCollection.find(buildQuery.call(this, selector));
 });

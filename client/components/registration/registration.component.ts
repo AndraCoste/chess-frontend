@@ -30,7 +30,8 @@ export class RegistrationComponent extends MeteorComponent {
 
 
         Meteor.subscribe('article', 'registration', () => {
-            this.data = ArticleCollection.findOne({selector:"registration"});
+            var article = ArticleCollection.findOne({selector: "registration"});
+            this.data = article ? article : this.data;
         });
 
     }
