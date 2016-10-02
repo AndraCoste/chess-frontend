@@ -2,17 +2,14 @@ import {Component, NgZone} from "@angular/core";
 import {MeteorComponent} from "angular2-meteor";
 //noinspection TypeScriptCheckImport
 import template from "./about-liga-ac.template.html";
-import {ArticleService} from "../../services/article-service";
 import {ArticleDataObject} from "../../../both/models/article-data-object";
 import {ArticleCollection} from "../../../both/collections/arrticle-collection";
 
 
-//noinspection TypeScriptCheckImport
-
 @Component({
     selector: 'about-liga-ac',
     template,
-    providers: [ArticleService]
+    providers: []
 })
 export class AboutLigaAC extends MeteorComponent {
     greeting: string;
@@ -26,12 +23,12 @@ export class AboutLigaAC extends MeteorComponent {
     };
 
 
-    constructor(private articleService: ArticleService) {
+    constructor() {
         super();
 
 
         Meteor.subscribe('article', 'about-liga-ac', () => {
-            this.data = ArticleCollection.findOne();
+            this.data = ArticleCollection.findOne({selector:"about-liga-ac"});
         });
 
     }

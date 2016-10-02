@@ -1,4 +1,3 @@
-import {ArticleService} from "../../services/article-service";
 import {Component} from "@angular/core";
 import {MeteorComponent} from "angular2-meteor";
 import {ArticleDataObject} from "../../../both/models/article-data-object";
@@ -13,7 +12,7 @@ import template from "./registration.template.html";
 @Component({
     selector: 'registration',
     template,
-    providers: [ArticleService]
+    providers: []
 })
 export class RegistrationComponent extends MeteorComponent {
 
@@ -26,7 +25,7 @@ export class RegistrationComponent extends MeteorComponent {
     };
 
 
-    constructor(private articleService: ArticleService) {
+    constructor() {
         super();
 
 

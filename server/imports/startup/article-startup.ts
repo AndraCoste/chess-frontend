@@ -21,7 +21,7 @@ export class ArticleStartup {
             ArticleCollection.insert(<ArticleDataObject>{
                 title: "Despre Liga AC",
                 author: null,
-                body: "Liga Studenților din Facultatea de Automatică și Calculatoare (Liga AC) este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
+                body: "asdfdsf Studenților din Facultatea de Automatică și Calculatoare (Liga AC) este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
                 image: null,
                 selector: "ma-ta"
             });
