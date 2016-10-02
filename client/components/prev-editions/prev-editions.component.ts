@@ -2,19 +2,19 @@
  * Created by NM on 10/2/2016.
  */
 
-import {ArticleDataObject} from "../../../both/models/article-data-object";
-import {MeteorComponent} from "angular2-meteor";
-import {ArticleCollection} from "../../../both/collections/arrticle-collection";
-import {Component} from "@angular/core";
 //noinspection TypeScriptCheckImport
-import template from "./rules.template.html";
+import template from "./prev-editions.template.html";
+import {Component} from "@angular/core";
+import {MeteorComponent} from "angular2-meteor";
+import {ArticleDataObject} from "../../../both/models/article-data-object";
+import {ArticleCollection} from "../../../both/collections/arrticle-collection";
 
 @Component({
-    selector: 'rules',
+    selector: 'prev-editions',
     template,
     providers: []
 })
-export class RulesArticle extends MeteorComponent {
+export class PrevEditions extends MeteorComponent {
 
     private data: ArticleDataObject = {
         title: null,
@@ -27,9 +27,12 @@ export class RulesArticle extends MeteorComponent {
 
     constructor() {
         super();
-        Meteor.subscribe('article', 'rules', () => {
-            var article = ArticleCollection.findOne({selector: "rules"});
+
+
+        Meteor.subscribe('article', 'prev-editions', () => {
+            var article = ArticleCollection.findOne({selector: "prev-editions"});
             this.data = article ? article : this.data;
         });
+
     }
 }

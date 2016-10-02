@@ -42,6 +42,35 @@ export class ArticleStartup {
                 image: null,
                 selector: "rules"
             });
+
+            ArticleCollection.insert(<ArticleDataObject>{
+                title: "Banner?",
+                author: null,
+                body: " Banner-ul ....  este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
+                image: null,
+                selector: "banner"
+            });
+            ArticleCollection.insert(<ArticleDataObject>{
+                title: "Ediții Hanterioare",
+                author: null,
+                body: " Hedițiile anterioare ....  este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
+                image: null,
+                selector: "prev-editions"
+            });
+            ArticleCollection.insert(<ArticleDataObject>{
+                title: "Parteneri",
+                author: null,
+                body: "Partenerii ....  este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
+                image: null,
+                selector: "partners"
+            });
+            ArticleCollection.insert(<ArticleDataObject>{
+                title: "Contact",
+                author: null,
+                body: "Contactul ....  este o organizație studențească ce reprezintă interesele studenților din Facultatea de Automatică și Calculatoare, și îi susține în viața socială și culturală...",
+                image: null,
+                selector: "contact"
+            });
         }
     }
 }

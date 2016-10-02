@@ -14,7 +14,7 @@ import template from "./registration.template.html";
     template,
     providers: []
 })
-export class RegistrationComponent extends MeteorComponent {
+export class RegistrationArticle extends MeteorComponent {
 
     private data: ArticleDataObject = {
         title: null,
