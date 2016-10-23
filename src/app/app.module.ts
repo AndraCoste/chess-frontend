@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {HttpModule, Headers} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {RulesArticle} from './components/rules/rules.component'
@@ -14,6 +14,7 @@ import {AboutLigaAC} from "./components/about-liga-ac/about-liga-ac.component";
 import {Contact} from "./components/contact/contact.component";
 import {ArticleServiceMock} from "./services/article.service.mock";
 import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {ArticleServiceAPI} from "./services/article.service.api";
 
 @NgModule({
     declarations: [
@@ -33,7 +34,7 @@ import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
         ModalModule
     ],
     providers: [
-        { provide: ARTICLE_SERVICE, useClass: ArticleServiceMock }
+        { provide: ARTICLE_SERVICE, useClass: ArticleServiceAPI }
     ],
     bootstrap: [AppComponent]
 })

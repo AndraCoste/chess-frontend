@@ -1,41 +1,33 @@
 import ArticleDataObject from '../model/article-data-object'
-import {Observable} from 'rxjs'
-import { Injectable, Inject, Optional } from '@angular/core';
+import {Injectable, Inject, Optional} from '@angular/core';
 import {ArticleService} from "./article.service";
-import article from "./article.mock";
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
 
 @Injectable()
 
-export class ArticleServiceAPI implements ArticleService{
+export class ArticleServiceAPI implements ArticleService {
 
-    private articleUrl='';
+    private articleUrl = 'http://api.chess.tdrs.me/';
+    private headers;
+    private options;
 
-    constructor(private http: Http){
-
-    }
-
-    getAll(){
-       return this.http.get(this.articleUrl);
-    }
-
-    getArticle(selector)  {
-        // let response : ArticleDataObject[];
-        let response;
-
-
-        this.getAll().subscribe(data => {
-            response = data;
-        })
-
-
-        response = article.filter((data) => {
-            return data.selector === selector
-        });
-
-        return  Observable.from(response);
+    constructor(private http: Http) {
+        this.headers = new Headers();
+        this.headers.append('Content-Type', 'application/json');
+        this.options = new RequestOptions({headers: this.headers});
 
     }
+
+
+    getAll() {
+        return this.http.get(this.articleUrl + 'api/Articles/All', this.options);
+    }
+
+    getArticle(selector) {
+        return this.http.get(this.articleUrl + 'api/Articles/GetArticleBySelector?selector='+ selector, this.options).map(data =>{ return JSON.parse(data['_body'])})
+    }
+
 
 }
+
 
