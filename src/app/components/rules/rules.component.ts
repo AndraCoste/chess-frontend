@@ -1,7 +1,8 @@
 
-import {Component, Inject} from "@angular/core";
+import {Component, Inject, ViewChild} from "@angular/core";
 import ArticleDataObject from "../../model/article-data-object";
 import {ArticleService, ARTICLE_SERVICE} from "../../services/article.service";
+import { ModalDirective } from 'ng2-bootstrap/ng2-bootstrap';
 
 
 @Component({
@@ -10,6 +11,7 @@ import {ArticleService, ARTICLE_SERVICE} from "../../services/article.service";
     styleUrls: ['./rules.style.less']
 })
 export class RulesArticle{
+    @ViewChild('childModal') public childModal:ModalDirective;
 
     private data: ArticleDataObject = {
         title: null,
@@ -26,4 +28,13 @@ export class RulesArticle{
             err => {throw new Error('articleService Error: ')}
         )
     }
+
+    public showChildModal():void {
+        this.childModal.show();
+    }
+
+    public hideChildModal():void {
+        this.childModal.hide();
+    }
+
 }

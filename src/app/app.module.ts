@@ -13,6 +13,7 @@ import {PrevEditions} from "./components/prev-editions/prev-editions.component";
 import {AboutLigaAC} from "./components/about-liga-ac/about-liga-ac.component";
 import {Contact} from "./components/contact/contact.component";
 import {ArticleServiceMock} from "./services/article.service.mock";
+import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 @NgModule({
     declarations: [
@@ -28,7 +29,8 @@ import {ArticleServiceMock} from "./services/article.service.mock";
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        ModalModule
     ],
     providers: [
         { provide: ARTICLE_SERVICE, useClass: ArticleServiceMock }
