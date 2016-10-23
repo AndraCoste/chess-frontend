@@ -1,0 +1,48 @@
+@import "./vars";
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 100;
+  outline: none;
+
+  &.btn-primary {
+    border-radius: 0;
+    background: @primary;
+    border-color: @primary;
+
+    &:hover {
+      background: @primary;
+      opacity: 0.8;
+    }
+
+    &:active {
+      background: @primary !important;
+      opacity: 0.8 !important;
+      outline: none !important;
+    }
+
+    &:focus {
+      background: @primary;
+      opacity: 0.8;
+      outline: none;
+    }
+  }
+}
+
+
+.front-page-article {
+  padding: 100px 0;
+
+  .row {
+    display: flex;
+  }
+
+  h2 {
+    padding-bottom: @medium;
+  }
+
+  p {
+    font-weight: 100;
+    color: @dark-grey;
+  }
+}
