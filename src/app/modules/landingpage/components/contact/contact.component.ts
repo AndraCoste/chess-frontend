@@ -18,10 +18,33 @@ export class Contact {
         selector: null
     };
 
+    private model = {
+        name: null,
+        email: null,
+        subject: null,
+        message: null
+    };
+
+    private send = false;
+
     constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService) {
+
+
+
         articleService.getArticle('contact').subscribe(
             data => {this.data = data},
             err => {throw new Error('articleService Error: ')}
         )
     }
+
+    onSubmit() {
+        this.articleService.postContact(this.model).subscribe(
+            data => this.send = true,
+            err => {
+                this.send = false
+                throw Error("contact form error") }
+        )
+    }
+
+
 }

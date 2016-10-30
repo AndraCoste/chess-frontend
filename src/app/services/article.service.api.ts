@@ -28,6 +28,10 @@ export class ArticleServiceAPI implements ArticleService {
     }
 
 
+    postContact(body) {
+        return this.http.post(this.articleUrl + 'api/Contacts/Add', body, this.options);
+    }
+
 }
 
 

@@ -3,4 +3,52 @@
 
 .contact-component {
   background: @grey;
+
+  .container {
+    .contact-info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .profile-picture {
+        max-width: 150px;
+        max-height: 150px;
+        border-radius: 100px;
+      }
+
+      .info {
+        .bold {
+          font-weight: 700;
+        }
+
+        .contact-field {
+          padding-left: @large;
+          margin: @small 0;
+        }
+
+        .contact-name {
+          background: url("../../../../../assets/img/user.svg") no-repeat left center;
+        }
+
+        .contact-email {
+          background: url("../../../../../assets/img/email.svg") no-repeat left center;
+        }
+
+        .contact-phone {
+          background: url("../../../../../assets/img/technology.svg") no-repeat left center;
+        }
+      }
+    }
+
+    .contact-form{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      form {
+        width: 1000%;
+      }
+
+    }
+  }
 }

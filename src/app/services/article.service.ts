@@ -8,6 +8,7 @@ import {Observable} from "rxjs";
 
 export interface ArticleService{
     getArticle(selector);
+    postContact(body);
 }
 
 export let ARTICLE_SERVICE = new OpaqueToken('app.article.service');
