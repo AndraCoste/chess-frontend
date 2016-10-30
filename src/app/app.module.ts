@@ -14,6 +14,8 @@ import {LandingpageModule} from "./modules/landingpage/landingpage.module";
 import { MenuComponent } from './components/menu/menu.component';
 import {RegisterModule} from "./modules/register/register.module";
 
+import {Ng2PageScrollModule} from 'ng2-page-scroll';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -26,7 +28,8 @@ import {RegisterModule} from "./modules/register/register.module";
         ModalModule,
         LandingpageModule,
         RegisterModule,
-        RouterModule.forRoot(ROUTES)
+        RouterModule.forRoot(ROUTES),
+        Ng2PageScrollModule
     ],
     providers: [
         { provide: ARTICLE_SERVICE, useClass: ArticleServiceAPI }
