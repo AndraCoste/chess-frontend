@@ -1,9 +1,11 @@
 <div class="banner-component front-page-article">
-    <div>
-        <div class="container">
-            <h2>Chess Contest</h2>
-            <h2> {{data.Title}} </h2>
-            <p class="text"> {{data.Tody}} </p>
+    <div class="container">
+        <div class="col-xs-12 col-md-6">
+            <h1> {{data.Title}} </h1>
+            <p class="text"> {{data.Body}} </p>
+            <button type="button" class="btn ban-secondary" (click)="showChildModal()">mai mult</button>
         </div>
+
+
     </div>
 </div>
