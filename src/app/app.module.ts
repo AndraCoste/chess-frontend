@@ -11,10 +11,13 @@ import {ArticleServiceAPI} from "./services/article.service.api";
 import {RouterModule} from "@angular/router";
 import {ROUTES} from "./app.routes";
 import {LandingpageModule} from "./modules/landingpage/landingpage.module";
+import { MenuComponent } from './components/menu/menu.component';
+import {RegisterModule} from "./modules/register/register.module";
 
 @NgModule({
     declarations: [
         AppComponent,
+        MenuComponent,
     ],
     imports: [
         BrowserModule,
@@ -22,6 +25,7 @@ import {LandingpageModule} from "./modules/landingpage/landingpage.module";
         HttpModule,
         ModalModule,
         LandingpageModule,
+        RegisterModule,
         RouterModule.forRoot(ROUTES)
     ],
     providers: [
