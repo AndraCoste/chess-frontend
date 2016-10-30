@@ -1,14 +1,14 @@
-
 import {Component, Inject} from "@angular/core";
-import {ArticleService, ARTICLE_SERVICE} from "../../services/article.service";
-import ArticleDataObject from "../../model/article-data-object";
+import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
+import ArticleDataObject from "../../../../model/article-data-object";
 
 @Component({
-    selector: 'banner',
-    templateUrl: './banner.template.html',
-    styleUrls: ['./banner.style.less']
+    selector: 'prev-editions',
+    templateUrl: './prev-editions.template.html',
+    styleUrls: ['./prev-editions.style.less']
+
 })
-export class Banner{
+export class PrevEditions{
 
     private data: ArticleDataObject = {
         title: null,
@@ -18,9 +18,8 @@ export class Banner{
         selector: null
     };
 
-
     constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService) {
-        articleService.getArticle('banner').subscribe(
+        articleService.getArticle('prev-editions').subscribe(
             data => {this.data = data},
             err => {throw new Error('articleService Error: ')}
         )

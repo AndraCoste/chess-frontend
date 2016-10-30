@@ -1,14 +1,14 @@
+
 import {Component, Inject} from "@angular/core";
-import {ArticleService, ARTICLE_SERVICE} from "../../services/article.service";
-import ArticleDataObject from "../../model/article-data-object";
+import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
+import ArticleDataObject from "../../../../model/article-data-object";
 
 @Component({
-    selector: 'prev-editions',
-    templateUrl: './prev-editions.template.html',
-    styleUrls: ['./prev-editions.style.less']
-
+    selector: 'contact',
+    templateUrl: './contact.template.html',
+    styleUrls: ['./contact.style.less']
 })
-export class PrevEditions{
+export class Contact {
 
     private data: ArticleDataObject = {
         title: null,
@@ -19,7 +19,7 @@ export class PrevEditions{
     };
 
     constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService) {
-        articleService.getArticle('prev-editions').subscribe(
+        articleService.getArticle('contact').subscribe(
             data => {this.data = data},
             err => {throw new Error('articleService Error: ')}
         )

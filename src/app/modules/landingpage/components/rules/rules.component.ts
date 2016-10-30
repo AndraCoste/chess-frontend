@@ -1,7 +1,7 @@
 
 import {Component, Inject, ViewChild} from "@angular/core";
-import ArticleDataObject from "../../model/article-data-object";
-import {ArticleService, ARTICLE_SERVICE} from "../../services/article.service";
+import ArticleDataObject from "../../../../model/article-data-object";
+import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
 import { ModalDirective } from 'ng2-bootstrap/ng2-bootstrap';
 
 
