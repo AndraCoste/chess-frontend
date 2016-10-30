@@ -5,10 +5,17 @@
   background: @grey;
 
   .container {
+
+    .contact-info {
+
+    }
+
     .contact-info {
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      padding-bottom: @large;
 
       .profile-picture {
         max-width: 150px;
@@ -39,8 +46,16 @@
         }
       }
     }
+    @media (min-width: 768px) {
+      .contact-info {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+      }
+    }
 
-    .contact-form{
+    .contact-form {
       display: flex;
       justify-content: space-around;
       align-items: center;
