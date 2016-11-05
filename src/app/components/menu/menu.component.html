@@ -2,7 +2,7 @@
     <div class="navbar navbar-fixed-top" [ngStyle]="{'background-color': background, 'color': color, 'box-shadow':border }">
         <div class="container">
 
-            <button class="open-menu icon-list" (click)="toggleMenu()"></button>
+            <div class="open-menu icon-list" (click)="toggleMenu()"></div>
 
             <div [ngClass]="{'overlay-visible': menuState}" class="overlay" (click)="toggleMenu()">
             </div>
@@ -36,7 +36,7 @@
                         <a class="nav-link" [routerLink]="['/inscriere']"> Inscriere </a>
                     </li>
                 </ul>
-                <button class="close-menu icon-close" (click)="toggleMenu()"></button>
+                <div class="close-menu icon-close" (click)="toggleMenu()"></div>
             </div>
 
         </div>
