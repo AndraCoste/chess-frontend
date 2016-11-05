@@ -1,38 +1,44 @@
+<nav class="menu-component">
+    <div class="navbar navbar-fixed-top" [ngStyle]="{'background-color': background, 'color': color, 'box-shadow':border }">
+        <div class="container">
 
+            <button class="open-menu icon-list" (click)="toggleMenu()"></button>
 
-<nav class="menu-component navbar navbar-fixed-top navbar-dark bg-inverse">
-  <!--<div class="container">-->
+            <div [ngClass]="{'overlay-visible': menuState}" class="overlay" (click)="toggleMenu()">
+            </div>
 
-  <!--</div>-->
-<!--</nav>-->
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation"
-          (click)="isCollapsed = !isCollapsed"></button>
-  <div class="navbar-toggleable-xs" id="navbar-header"
-       [attr.aria-expanded]="!isCollapsed" [ngClass]="{collapse: isCollapsed}">
+            <div [ngClass]="{'visible': menuState}" class="menu-items">
+                <a class="navbar-brand" [routerLink]="['/']">Chess 2016</a>
 
-    <a class="navbar-brand" href="#">Chess 2016</a>
-    <ul class="nav navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/']" pageScroll href="#banner"> Home </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/inscriere']"> Inscriere </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/']" pageScroll href="#regulament">Regulament</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/']" pageScroll href="#parteneri">Parteneri</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/']" pageScroll href="#editii-anterioare">Ediții anterioare</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/']" pageScroll href="#liga-ac">Despre Liga AC</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/']" pageScroll href="#contact">Contact</a>
-      </li>
-    </ul>
-  </div>
+                <ul class="nav navbar-nav" (click)="toggleMenu()">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#banner"> Home </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#regulament">Regulament</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#parteneri">Parteneri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#editii-anterioare">Ediții
+                            anterioare</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#liga-ac">Despre Liga AC</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item separator">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/inscriere']"> Inscriere </a>
+                    </li>
+                </ul>
+                <button class="close-menu icon-close" (click)="toggleMenu()"></button>
+            </div>
+
+        </div>
+    </div>
 </nav>

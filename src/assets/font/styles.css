@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "fontastic";
+  src:url("fonts/fontastic.eot");
+  src:url("fonts/fontastic.eot?#iefix") format("embedded-opentype"),
+    url("fonts/fontastic.woff") format("woff"),
+    url("fonts/fontastic.ttf") format("truetype"),
+    url("fonts/fontastic.svg#fontastic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "fontastic" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontastic" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-angle-right:before {
+  content: "\64";
+}
+.icon-angle-left:before {
+  content: "\65";
+}
+.icon-angle-double-right:before {
+  content: "\66";
+}
+.icon-angle-double-left:before {
+  content: "\67";
+}
+.icon-angle-double-down:before {
+  content: "\68";
+}
+.icon-list:before {
+  content: "\69";
+}
+.icon-close:before {
+  content: "\6a";
+}
