@@ -11,19 +11,7 @@ import ArticleDataObject from "../../../../model/article-data-object";
 })
 export class Partners{
 
-    private data: ArticleDataObject = {
-        title: null,
-        author: null,
-        body: null,
-        image: null,
-        selector: null
-    };
+    constructor() {
 
-
-    constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService) {
-        articleService.getArticle('partners').subscribe(
-            data => {this.data = data},
-            err => {throw new Error('articleService Error: ')}
-        )
     }
 }
