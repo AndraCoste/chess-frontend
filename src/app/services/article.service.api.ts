@@ -14,6 +14,7 @@ export class ArticleServiceAPI implements ArticleService {
     constructor(private http: Http) {
         this.headers = new Headers();
         this.headers.append('Content-Type', 'application/json');
+        this.headers.append('Accept', 'application/json');
         this.options = new RequestOptions({headers: this.headers});
 
     }
