@@ -41,6 +41,9 @@
             font-weight: 100;
           }
 
+          .sidemenu-icon{
+            display:none;
+          }
         }
       }
     }
@@ -120,6 +123,21 @@
             margin: 0;
             padding: 0 @medium;
 
+            &:hover{
+              background-color: rgba(100,100,100,0.2);
+              color: @medium-grey;
+            }
+
+            .nav-link{
+              display:flex;
+              align-items: center;
+
+              .sidemenu-icon{
+                margin-right:10px;
+                padding:0;
+                line-height: 16px;
+              }
+            }
           }
         }
       }
