@@ -1,23 +1,26 @@
 import article from './article.mock';
 import ArticleDataObject from '../model/article-data-object'
 import {Observable} from 'rxjs'
-import { Injectable, Inject, Optional } from '@angular/core';
+import {Injectable, Inject, Optional} from '@angular/core';
 import {ArticleService} from "./article.service";
 
 @Injectable()
 
-export class ArticleServiceMock implements ArticleService{
-    getArticle(selector)  {
+export class ArticleServiceMock implements ArticleService {
+  postContact(body) {
+  }
 
-        let response : ArticleDataObject[];
+  getArticle(selector) {
 
-        response = article.filter((data) => {
-            return data.selector === selector
-        });
+    let response: ArticleDataObject[];
 
-        return  Observable.from(response);
+    response = article.filter((data) => {
+      return data.selector === selector
+    });
 
-    }
+    return Observable.from(response);
+
+  }
 
 }
 

@@ -14,6 +14,7 @@ import {LandingpageModule} from "./modules/landingpage/landingpage.module";
 import { MenuComponent } from './components/menu/menu.component';
 import {RegisterModule} from "./modules/register/register.module";
 
+//noinspection TypeScriptCheckImport
 import {Ng2PageScrollModule} from 'ng2-page-scroll';
 
 @NgModule({

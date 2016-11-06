@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {RegistrationServiceAPI} from "../../services/registration.service";
 
 const EmailRegex = "^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
 
@@ -11,9 +12,9 @@ const EmailRegex = "^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 export class RegisterComponent implements OnInit {
 
   public form: FormGroup;
-  private loading:boolean = false;
+  private loading: boolean = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private registrationService: RegistrationServiceAPI) {
     this.form = fb.group({
       'firstName': ['', Validators.required],
       'lastName': ['', Validators.required],
@@ -30,6 +31,10 @@ export class RegisterComponent implements OnInit {
 
   submitForm(form:FormGroup) {
     console.log(form.value);
+    this.registrationService.register(form.value).subscribe(data=>{
+      var response = JSON.parse(data["_body"]);
+      console.log("data", response);
+    });
   }
 
 }
