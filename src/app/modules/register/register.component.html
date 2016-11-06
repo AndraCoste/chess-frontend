@@ -1,67 +1,57 @@
 <div class="register-component">
+    <div class="container">
+        <div class="col-xs-12 col-md-6">
+            <div class="title">
+                <h2> Înscrie-te </h2>
+            </div>
+            <form [formGroup]="form" class="form-horizontal" (ngSubmit)="submitForm(form)">
 
-  <form [formGroup]="form" class="form-horizontal" (ngSubmit)="submitForm(form)">
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Prenumele tău"
+                           [formControl]="form.controls['firstName']">
+                </div>
 
-    <div class="form-group">
-      <label class="col-md-2 control-label">Prenume:</label>
-      <div class="col-md-10">
-        <input class="form-control" type="text" placeholder="Prenumele tău" [formControl]="form.controls['firstName']">
-      </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Numele tău"
+                           [formControl]="form.controls['lastName']">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Adresa ta de email"
+                           [formControl]="form.controls['email']">
+
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Numărul tău de telefon"
+                           [formControl]="form.controls['phone']">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" onfocus="(this.type='date')" placeholder="Când te-ai născut?"
+                           [formControl]="form.controls['birthDate']">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Instituția de învățământ"
+                           [formControl]="form.controls['university']">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" [formControl]="form.controls['legitimated']">
+                    Legitimat
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Înregistrare</button>
+                    <i class="fa fa-spinner fa-spin fa-3x"
+                       aria-hidden="true"
+                       *ngIf="loading"></i>
+
+                </div>
+
+            </form>
+        </div>
+        <div class="horse col-xs-0 col-md-6" ></div>
     </div>
-
-    <div class="form-group">
-      <label class="col-md-2 control-label">Nume de familie:</label>
-      <div class="col-md-10">
-        <input class="form-control" type="text" placeholder="Numele tău" [formControl]="form.controls['lastName']">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-2 control-label">Email:</label>
-      <div class="col-md-10">
-        <input class="form-control" type="text" placeholder="Adresa ta de email" [formControl]="form.controls['email']">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-2 control-label">Telefon:</label>
-      <div class="col-md-10">
-        <input class="form-control" type="text" placeholder="Numărul tău de telefon" [formControl]="form.controls['phone']">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-2 control-label">Data nașterii:</label>
-      <div class="col-md-10">
-        <input class="form-control" type="date" placeholder="Când te-ai născut?" [formControl]="form.controls['birthDate']">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="col-md-2 control-label">Instituția de învățământ:</label>
-      <div class="col-md-10">
-        <input class="form-control" type="text" placeholder="Instituția de învățământ" [formControl]="form.controls['university']">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-md-10 col-md-offset-2">
-        <label class="checkbox">
-          <input type="checkbox" [formControl]="form.controls['legitimated']">
-          Legitimat
-        </label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="col-md-10 col-md-offset-2">
-        <button type="submit" class="btn btn-primary" >Înregistrare</button>
-        <i class="fa fa-spinner fa-spin fa-3x"
-           aria-hidden="true"
-           *ngIf="loading"></i>
-
-      </div>
-    </div>
-
-  </form>
 </div>
