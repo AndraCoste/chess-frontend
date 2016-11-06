@@ -59,3 +59,24 @@
 .icon-close:before {
   content: "\6a";
 }
+.icon-home:before {
+  content: "\61";
+}
+.icon-clipboard:before {
+  content: "\62";
+}
+.icon-book-open:before {
+  content: "\63";
+}
+.icon-bookmarks:before {
+  content: "\6b";
+}
+.icon-vcard:before {
+  content: "\6c";
+}
+.icon-users:before {
+  content: "\6d";
+}
+.icon-newspaper:before {
+  content: "\6e";
+}
