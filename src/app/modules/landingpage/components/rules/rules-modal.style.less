@@ -1,0 +1,47 @@
+.rules-modal {
+
+  .title {
+    font-size: 2.2em;
+  }
+
+  ul {
+    list-style-type: circle;
+    margin-top: -1em;
+  }
+
+  ol {
+    list-style-type: decimal;
+    > li {
+      > :first-child {
+        font-weight: bold;
+      }
+      > * {
+        font-size: 15px;
+        font-weight: normal;
+      }
+    }
+
+    ol {
+      list-style-type: lower-alpha;
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+
+  ol:not(.unbold) > li {
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  p {
+    text-indent: 30px;
+    margin-top: 0;
+  }
+
+}

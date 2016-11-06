@@ -13,17 +13,19 @@
         </div>
     </div>
 
-    <div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
+    <div bsModal #childModal="bs-modal" class="modal fade rules-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" aria-label="Close" (click)="hideChildModal()">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">Child modal</h4>
+                    <h4 class="modal-title">{{data.Title}}</h4>
                 </div>
                 <div class="modal-body">
-                    {{data.Body}}
+                  <div [innerHtml]="data.Body">
+
+                  </div>
                 </div>
             </div>
         </div>
