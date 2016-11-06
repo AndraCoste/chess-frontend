@@ -32,7 +32,7 @@ import {RulesArticle} from "./components/rules/rules.component";
         FormsModule,
         HttpModule,
         ModalModule,
-
+        RouterModule
 
     ],
     providers: [

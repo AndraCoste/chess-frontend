@@ -2,15 +2,15 @@
     <div class="navbar navbar-fixed-top" [ngStyle]="{'background-color': background, 'color': color, 'box-shadow':border }">
         <div class="container">
 
-            <div class="open-menu icon-list" (click)="toggleMenu()"></div>
+            <div class="open-menu icon-list" (click)="openMenu()"></div>
 
-            <div [ngClass]="{'overlay-visible': menuState}" class="overlay" (click)="toggleMenu()">
+            <div [ngClass]="{'overlay-visible': menuState}" class="overlay" (click)="closeMenu()">
             </div>
 
             <div [ngClass]="{'visible': menuState}" class="menu-items">
                 <a class="navbar-brand" [routerLink]="['/']">Chess 2016</a>
 
-                <ul class="nav navbar-nav" (click)="toggleMenu()">
+                <ul class="nav navbar-nav" (click)="closeMenu()">
                     <li class="nav-item active">
                         <a class="nav-link" [routerLink]="['/']" pageScroll href="#banner"> Home </a>
                     </li>
@@ -36,7 +36,7 @@
                         <a class="nav-link" [routerLink]="['/inscriere']"> Inscriere </a>
                     </li>
                 </ul>
-                <div class="close-menu icon-close" (click)="toggleMenu()"></div>
+                <div class="close-menu icon-close" (click)="closeMenu()"></div>
             </div>
 
         </div>

@@ -21,12 +21,13 @@ export class MenuComponent implements OnInit {
 
         this.setLandingPageStyle = this.setLandingPageStyle.bind(this);
 
+        this.landingPageInitStyle();
+
         router.events
             .filter(event => event instanceof NavigationStart)
             .subscribe(results => {
                     if (results.url === "/") {
 
-                        this.landingPageInitStyle();
                         window.addEventListener('scroll', this.setLandingPageStyle);
 
                     } else {
@@ -35,8 +36,6 @@ export class MenuComponent implements OnInit {
                     }
                 }
             );
-
-
     }
 
     ngOnInit() {
@@ -67,6 +66,14 @@ export class MenuComponent implements OnInit {
 
     toggleMenu() {
         this.menuState = !this.menuState;
+    }
+
+    openMenu() {
+        this.menuState = true;
+    }
+
+    closeMenu() {
+        this.menuState = false;
     }
 }
 
