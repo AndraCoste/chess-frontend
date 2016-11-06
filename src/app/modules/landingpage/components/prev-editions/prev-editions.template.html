@@ -1,7 +1,29 @@
-
-<div class="prev-editions-component front-page-article">
-    <div class="container">
-        <h2> {{data.Title}} </h2>
-        <p> {{data.Body}} </p>
+<div class="prev-editions-component ">
+    <div class="front-page-article text">
+        <h2> Ediții anterioare </h2>
     </div>
+
+    <div class="gallery">
+        <div *ngFor="let picture of thumbnail; let i = index"
+             class="col-xs-6 col-sm-4 col-md-3 col-lg-2  picture-container">
+            <div class="picture" (click)="openImage(i)" [ngStyle]="{'background-image': picture}">
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="gallery-modal" [ngClass]="{'visible': galleryModal}" (click)="closeImage()">
+    <div class="icon-close controller close-controller" (click)="closeImage()"></div>
+
+    <div class="controller left-controller" (click)="prevImg($event)">
+        <div class="icon-angle-left"></div>
+    </div>
+    <img [src]="image" (click)="nextImg($event)">
+    <div class="controller right-controller" (click)="nextImg($event)">
+        <div class="icon-angle-right"></div>
+    </div>
+
 </div>

@@ -14,6 +14,7 @@ import {Banner} from "./components/banner/banner.component";
 import {Partners} from "./components/partners/partners.component";
 import {RegistrationArticle} from "./components/registration/registration.component";
 import {RulesArticle} from "./components/rules/rules.component";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -32,8 +33,8 @@ import {RulesArticle} from "./components/rules/rules.component";
         FormsModule,
         HttpModule,
         ModalModule,
-        RouterModule
-
+        RouterModule,
+        CommonModule,
     ],
     providers: [
     ],

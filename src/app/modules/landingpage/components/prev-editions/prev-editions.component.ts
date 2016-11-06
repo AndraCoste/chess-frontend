@@ -1,6 +1,4 @@
-import {Component, Inject} from "@angular/core";
-import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
-import ArticleDataObject from "../../../../model/article-data-object";
+import {Component} from "@angular/core";
 
 @Component({
     selector: 'prev-editions',
@@ -10,18 +8,59 @@ import ArticleDataObject from "../../../../model/article-data-object";
 })
 export class PrevEditions{
 
-    private data: ArticleDataObject = {
-        title: null,
-        author: null,
-        body: null,
-        image: null,
-        selector: null
-    };
+    private pictures: string[] = [];
+    private thumbnail: string[] = [];
+    private image:string;
+    private galleryModal: boolean = false;
+    private index:number;
 
-    constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService) {
-        articleService.getArticle('prev-editions').subscribe(
-            data => {this.data = data},
-            err => {throw new Error('articleService Error: ')}
-        )
+    constructor() {
+
+        const IMAGE_URL = "./assets/img/prev_ed";
+
+        for (let i = 0; i < 18; i++){
+            this.thumbnail.push( `url('${IMAGE_URL}/thumbnail/image${i}.jpg')`);
+            this.pictures.push( `${IMAGE_URL}/full/image${i}.jpg`);
+
+        }
     }
+
+    openImage(index) {
+        this.index = index;
+        this.image = this.pictures[this.index];
+        this.galleryModal = true;
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeImage() {
+        this.galleryModal = false;
+        document.body.style.overflow = '';
+
+    }
+
+    prevImg(e) {
+        if(this.index > 0) {
+            this.index = --this.index;
+        }
+        else {
+            this.index = this.pictures.length -1;
+        }
+
+        this.image = this.pictures[this.index];
+        e.stopPropagation();
+    }
+
+    nextImg(e) {
+
+        if(this.index < (this.pictures.length -1)) {
+            this.index = ++this.index;
+        }
+        else {
+            this.index = 0;
+        }
+
+        this.image = this.pictures[this.index];
+        e.stopPropagation();
+    }
+
 }
