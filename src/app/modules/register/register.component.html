@@ -1,16 +1,15 @@
 <div class="register-component">
   <div class="container">
-  <div class="row">
-    <!--<div style="display:inline-block; min-height:290px;">-->
-    <!--</div>-->
-  </div>
+    <div class="row">
+      <!--<div style="display:inline-block; min-height:290px;">-->
+      <!--</div>-->
+    </div>
 
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <div class="title">
           <h2> Înscrie-te </h2>
         </div>
-			<div class="contact-form">
         <form [formGroup]="form" class="form-horizontal" (ngSubmit)="submitForm(form)">
 
           <div class="form-group" [ngClass]="{'has-danger':invalidField('firstName')}">
@@ -24,7 +23,7 @@
           </div>
 
           <div class="form-group" [ngClass]="{'has-danger':invalidField('email')}">
-            <input class="form-control" type="email" placeholder="Adresa ta de email"
+            <input class="form-control" type="text" placeholder="Adresa ta de email"
                    [formControl]="form.controls['email']">
 
           </div>
@@ -36,12 +35,12 @@
 
 
           <div class="form-group row" [ngClass]="{'has-danger':invalidField('birthDate')}"
-               >
+          >
             <div class="col-sm-3">
               <label class="control-label">Data nașterii:</label>
             </div>
             <div class="col-sm-9 right-items">
-                <tdr-date-picker (changed)="birthDateChanged($event)"></tdr-date-picker>
+              <tdr-date-picker (changed)="birthDateChanged($event)"></tdr-date-picker>
             </div>
           </div>
 
@@ -59,13 +58,10 @@
               <strong>Atenție!</strong> Nu ai completat corect toate câmpurile
             </div>
           </div>
-            <div class="alert alert-warning" role="alert">
-              <strong>Atenție!</strong> Nu ai completat corect toate câmpurile
-            </div>
-          </div>
           <div class="form-group">
             <button type="submit" class="btn btn-primary">Înregistrare</button>
             <!--[disabled]="loading || invalidForm()"-->
+
           </div>
           <div class="form-group messages">
             <div class="alert alert-success" role="alert" [hidden]="!successMessage">
@@ -75,29 +71,12 @@
               <strong>Ups!</strong> A apărut o problemă, te rugăm să încerci din nou sau să ne contactezi prin email.
             </div>
           </div>
-          <div class="form-group messages">
-            <div class="alert alert-success" role="alert" [hidden]="!successMessage">
-              <strong>Succes!</strong> Te-ai înregistrat cu success. Vei primi în scurt timp un email de confirmare.
-            </div>
-            <div class="alert alert-danger" role="alert" [hidden]="!errorMessage">
-              <strong>Ups!</strong> A apărut o problemă, te rugăm să încerci din nou sau să ne contactezi prin email.
-            </div>
-          </div>
+
         </form>
 
       </div>
-		</div>
-		<div class="horse col-xs-0 col-md-6"></div>
       <div class="horse col-xs-0 col-md-6"></div>
-	</div>
-
-    <div class="row">
-      <div class="col-md-6 col-xs-12">
-
-        <div class="loader" [hidden]="!loading">Loading...</div>
-      </div>
     </div>
-  </div>
 
     <div class="row">
       <div class="col-md-6 col-xs-12">

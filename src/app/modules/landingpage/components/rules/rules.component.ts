@@ -25,7 +25,7 @@ export class RulesArticle {
     articleService.getArticle('rules').subscribe(
       data => {
         this.data = data;
-        console.log(data)
+        // console.log(data)
       },
       err => {
         throw new Error('articleService Error: ')

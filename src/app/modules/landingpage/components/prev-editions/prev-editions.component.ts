@@ -18,7 +18,7 @@ export class PrevEditions{
 
         const IMAGE_URL = "./assets/img/prev_ed";
         const ImgNumber = 32;
-        console.log("ImgNumber="+ImgNumber);
+        // console.log("ImgNumber="+ImgNumber);
         for (let i = 0; i < ImgNumber; i++){
             this.thumbnail.push( `url('${IMAGE_URL}/thumbnail/${this.getFileName(i)}')`);
             this.pictures.push( `${IMAGE_URL}/full/${this.getFileName(i)}`);
