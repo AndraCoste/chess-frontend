@@ -10,7 +10,7 @@ import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.serv
 })
 export class Contact {
 
-    private send = false;
+    send = false;
 
     form: FormGroup;
 
@@ -20,7 +20,7 @@ export class Contact {
     ) {
     }
 
-    submitForm(form:FormGroup){
+    submitForm(form:FormGroup) {
         this.articleService.postContact(form.value).subscribe(
             data => {
                 this.send = true;
@@ -40,6 +40,4 @@ export class Contact {
             'message': ['', Validators.required]
         })
     }
-
-
 }
