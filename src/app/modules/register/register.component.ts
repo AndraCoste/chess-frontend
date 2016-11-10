@@ -2,9 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from "@angular/forms";
 import { RegistrationServiceAPI } from "../../services/registration.service";
 
-
-const EmailRegex = "^[a-zA-Z0-9.!#$%&’*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -26,7 +23,7 @@ export class RegisterComponent implements OnInit{
     this.form = this.fb.group({
       'firstName': ['', Validators.required],
       'lastName': ['', Validators.required],
-      'email': ['', [Validators.required, Validators.pattern(EmailRegex)]],
+      'email': ['', [Validators.required]],
       'phone': ['', [Validators.required, Validators.minLength(10)]],
       'birthDate': ['', Validators.required],
       'university': ['', Validators.required],
@@ -34,10 +31,6 @@ export class RegisterComponent implements OnInit{
     });
     // (this.minDate = new Date()).setDate(this.minDate.getDate() - 1000);
 
-  }
-
-  ngOnInit() {
-    // this.loading = true;
   }
 
 
