@@ -17,12 +17,19 @@ export class PrevEditions{
     constructor() {
 
         const IMAGE_URL = "./assets/img/prev_ed";
-
-        for (let i = 0; i < 18; i++){
-            this.thumbnail.push( `url('${IMAGE_URL}/thumbnail/image${i}.jpg')`);
-            this.pictures.push( `${IMAGE_URL}/full/image${i}.jpg`);
-
+        const ImgNumber = 32;
+        console.log("ImgNumber="+ImgNumber);
+        for (let i = 0; i < ImgNumber; i++){
+            this.thumbnail.push( `url('${IMAGE_URL}/thumbnail/${this.getFileName(i)}')`);
+            this.pictures.push( `${IMAGE_URL}/full/${this.getFileName(i)}`);
         }
+    }
+
+    private getFileName(index:number){
+      var str = index.toString();
+      while(str.length!=3)
+      str = "0"+str;
+      return `image_${str}.jpg`;
     }
 
     openImage(index) {
