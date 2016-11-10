@@ -1,5 +1,5 @@
 
-import {Component, Inject} from "@angular/core";
+import {Component, Inject, OnInit} from "@angular/core";
 import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
 import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
 
@@ -8,7 +8,7 @@ import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.serv
     templateUrl: './contact.template.html',
     styleUrls: ['./contact.style.less']
 })
-export class Contact {
+export class Contact implements OnInit {
 
     send = false;
 
