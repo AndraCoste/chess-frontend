@@ -45,12 +45,13 @@
 						<input placeholder="Mesaj" type="text" [formControl]="form.controls['message']" class="form-control">
 					</div>
 
-
-					<button type="submit" class="btn btn-default">Trimite</button>
+                    <div class="form-group">
+					    <button type="submit" [disabled]="!form.valid" class="btn btn-default">Trimite</button>
+                    </div>
 				</form>
 
 				<div *ngIf="send === true">
-					Acest mesaj a fost trimis. Ve-ti primi un raspuns in cel mai scurt timp.
+					Acest mesaj a fost trimis. Veti primi un raspuns in cel mai scurt timp.
 				</div>
 			</div>
 
