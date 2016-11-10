@@ -1,68 +1,60 @@
 <nav class="menu-component">
-    <div class="navbar navbar-fixed-top" [ngStyle]="{'background-color': background, 'color': color, 'box-shadow':border }">
-        <div class="container">
+	<div class="navbar navbar-fixed-top" [ngStyle]="{'background-color': background, 'color': color, 'box-shadow':border }">
+		<div class="container">
 
-            <div class="open-menu icon-list" (click)="openMenu()"></div>
+			<div class="open-menu icon-list" (click)="openMenu()"></div>
 
-            <div [ngClass]="{'overlay-visible': menuState}" class="overlay" (click)="closeMenu()">
-            </div>
+			<div [ngClass]="{'overlay-visible': menuState}" class="overlay" (click)="closeMenu()">
+			</div>
 
-            <div [ngClass]="{'visible': menuState}" class="menu-items">
-                <a class="navbar-brand" [routerLink]="['/']">
-                    <span class="icon-chess"></span>
-                    CHESS CONTEST
-                </a>
+			<div [ngClass]="{'visible': menuState}" class="menu-items">
+				<a class="navbar-brand" [routerLink]="['/']">
+					<span class="icon-chess"></span> CHESS CONTEST
+				</a>
 
-                <ul class="nav navbar-nav" (click)="closeMenu()">
-                    <li class="nav-item active">
-                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#banner">
-                            <span class="icon-home sidemenu-icon"></span>
-                            Home
-                        </a>
-                    </li>
+				<ul class="nav navbar-nav" (click)="closeMenu()">
+					<li class="nav-item active">
+						<a class="nav-link" [routerLink]="['/']" pageScroll href="#banner">
+							<span class="icon-home sidemenu-icon"></span> Home
+						</a>
+					</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#regulament">
-                            <span class="icon-clipboard  sidemenu-icon"></span>
-                            Regulament
-                </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#parteneri">
-                            <span class="icon-users sidemenu-icon"></span>
-                            Parteneri
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#editii-anterioare">
-                            <span class="icon-bookmarks sidemenu-icon"></span>
-                            Ediții anterioare
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#liga-ac">
-                            <span class="icon-newspaper sidemenu-icon"></span>
-                            Despre Liga AC
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/']" pageScroll href="#contact">
-                            <span class="icon-vcard sidemenu-icon"></span>
-                            Contact
-                        </a>
-                    </li>
-                    <li class="nav-item separator">| </li>
-                    <li class="mobile-separator"></li>
-                    <li class="nav-item register">
-                        <a class="nav-link" [routerLink]="['/inscriere']">
-                            <span class="icon-clipboard sidemenu-icon"></span>
-                            Inscriere
-                        </a>
-                    </li>
-                </ul>
-                <div class="close-menu icon-close" (click)="closeMenu()"></div>
-            </div>
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/']" pageScroll href="#regulament">
+							<span class="icon-clipboard  sidemenu-icon"></span> Regulament
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/']" pageScroll href="#liga-ac">
+							<span class="icon-newspaper sidemenu-icon"></span> Despre Liga AC
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/']" pageScroll href="#editii-anterioare">
+							<span class="icon-bookmarks sidemenu-icon"></span> Ediții anterioare
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/']" pageScroll href="#parteneri">
+							<span class="icon-users sidemenu-icon"></span> Parteneri
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" [routerLink]="['/']" pageScroll href="#contact">
+							<span class="icon-vcard sidemenu-icon"></span> Contact
+						</a>
+					</li>
+					<li class="nav-item separator">| </li>
+					<li class="mobile-separator"></li>
+					<li class="nav-item register">
+						<a class="nav-link" [routerLink]="['/inscriere']">
+							<span class="icon-clipboard sidemenu-icon"></span> Inscriere
+						</a>
+					</li>
+				</ul>
+				<div class="close-menu icon-close" (click)="closeMenu()"></div>
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </nav>
