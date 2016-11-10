@@ -1,0 +1,45 @@
+<!--<select [(ngModel)]="selected.year" (change)="stChanged($event)">-->
+  <!--<option *ngFor="let year of years" [value]="year">{{year}}</option>-->
+<!--</select>-->
+
+<!--<select [(ngModel)]="selected.month" (change)="stChanged($event)">-->
+  <!--<option *ngFor="let month of months" [value]="month.index">{{month.name}}</option>-->
+<!--</select>-->
+
+<!--<select [(ngModel)]="selected.day" (change)="dayChanged($event)">-->
+  <!--<option *ngFor="let day of days" [value]="day">{{day}}</option>-->
+<!--</select>-->
+
+<div class="tdr-date-picker">
+  <div class="btn-group year" dropdown>
+    <button id="year-select-dropdown" type="button" class="btn btn-primary" dropdownToggle>
+      {{selected.year}} <span class="caret"></span>
+    </button>
+    <ul dropdownMenu role="menu" aria-labelledby="year-select-dropdown" class="dropdown-content">
+      <li role="menuitem" *ngFor="let year of years">
+        <a class="dropdown-item" [ngClass]="{selected:selected.year==year}" (click)="selectedYear(year)">{{year}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group month" dropdown>
+    <button id="month-select-dropdown" type="button" class="btn btn-primary" dropdownToggle>
+      {{months[selected.month-1].name}} <span class="caret"></span>
+    </button>
+    <ul dropdownMenu role="menu" aria-labelledby="month-select-dropdown" class="dropdown-content">
+      <li role="menuitem" *ngFor="let month of months">
+        <a class="dropdown-item" [ngClass]="{selected:selected.month==month.index}"
+           (click)="selectedMonths(month.index)">{{month.name}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="btn-group day" dropdown>
+    <button id="day-select-dropdown" type="button" class="btn btn-primary" dropdownToggle>
+      {{selected.day}} <span class="caret"></span>
+    </button>
+    <ul dropdownMenu role="menu" aria-labelledby="month-select-dropdown" class="dropdown-content">
+      <li role="menuitem" *ngFor="let day of days">
+        <a class="dropdown-item" [ngClass]="{selected:selected.day==day}" (click)="selectedDay(day)">{{day}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

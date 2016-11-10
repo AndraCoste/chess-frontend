@@ -11,6 +11,7 @@ import {Observable} from "rxjs";
 export class RegistrationServiceAPI{
 
   private backendUri = 'http://api.chess.tdrs.me/';
+  // private backendUri = 'http://api.chess.tdr/';
   private headers: Headers;
   private options: RequestOptions;
 
