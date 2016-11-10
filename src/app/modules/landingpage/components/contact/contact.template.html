@@ -1,64 +1,59 @@
 <div class="contact-component front-page-article">
-    <div class="container">
+	<div class="container">
+		<h2 class="title"> Contact </h2>
+		<div class="col-sm-12 col-lg-6">
+			<div class="contact-info">
+				<img class="profile-picture" src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xat1/t31.0-8/12068613_983058688411685_6820040951749450518_o.jpg"
+				/>
 
-        <h2 class="title"> Contact </h2>
-        <div class="col-sm-12 col-lg-6">
-            <div class="contact-info">
-                <img class="profile-picture"
-                     src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xat1/t31.0-8/12068613_983058688411685_6820040951749450518_o.jpg"/>
+				<div class="info">
+					<div class="contact-field contact-name">
+						<span class="bold"> coordonator: </span>
+						<span> Horia COSTINA </span>
+					</div>
 
-                <div class="info">
-                    <div class="contact-field contact-name">
-                        <span class="bold"> coordonator: </span>
-                        <span> Horia COSTINA </span>
-                    </div>
+					<div class="contact-field contact-email">
+						<span class="bold"> email: </span>
+						<span> horia.costina@ligaac.ro </span>
+					</div>
 
-                    <div class="contact-field contact-email">
-                        <span class="bold"> email: </span>
-                        <span> horia.costina@ligaac.ro </span>
-                    </div>
+					<div class="contact-field contact-phone">
+						<span class="bold"> telefon: </span>
+						<span> +40 720 315 682 </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-lg-6">
 
-                    <div class="contact-field contact-phone">
-                        <span class="bold"> telefon: </span>
-                        <span> +40 720 315 682 </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-6">
+			<div class="contact-form">
 
-            <div class="contact-form">
+				<form [formGroup]="form" (ngSubmit)="submitForm(form)">
+					<div class="form-group">
+						<input placeholder="Nume" type="text" [formControl]="form.controls['name']" class="form-control">
+					</div>
 
-                <form *ngIf="send === false" (ngSubmit)="onSubmit()">
-                    <div class="form-group">
-                        <input placeholder="Nume" type="text" [(ngModel)]="model.name" class="form-control" name="name"
-                               required>
-                    </div>
+					<div class="form-group">
+						<input placeholder="Email" type="email" [formControl]="form.controls['email']" class="form-control">
+					</div>
 
-                    <div class="form-group">
-                        <input placeholder="Email" type="email" [(ngModel)]="model.email" class="form-control"
-                               name="email" required>
-                    </div>
+					<div class="form-group">
+						<input placeholder="Subiect" type="text" [formControl]="form.controls['subject']" class="form-control">
+					</div>
 
-                    <div class="form-group">
-                        <input placeholder="Subiect" type="text" [(ngModel)]="model.subject" class="form-control"
-                               name="subject" required>
-                    </div>
-
-                    <div class="form-group">
-                        <input placeholder="Mesaj" type="text" [(ngModel)]="model.message" class="form-control"
-                               name="message" required>
-                    </div>
+					<div class="form-group">
+						<input placeholder="Mesaj" type="text" [formControl]="form.controls['message']" class="form-control">
+					</div>
 
 
-                    <button type="submit" class="btn btn-default">Trimite</button>
-                </form>
+					<button type="submit" class="btn btn-default">Trimite</button>
+				</form>
 
-                <div *ngIf="send === true">
-                    Acest mesaj a fost trimis. Ve-ti primi un raspuns in cel mai scurt timp.
-                </div>
-            </div>
+				<div *ngIf="send === true">
+					Acest mesaj a fost trimis. Ve-ti primi un raspuns in cel mai scurt timp.
+				</div>
+			</div>
 
-        </div>
-    </div>
+		</div>
+	</div>
 </div>
