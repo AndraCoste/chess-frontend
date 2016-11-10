@@ -1,5 +1,6 @@
 
 import {Component, Inject} from "@angular/core";
+import { FormGroup, FormControl } from "@angular/forms";
 import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
 import ArticleDataObject from "../../../../model/article-data-object";
 
