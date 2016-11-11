@@ -8,6 +8,7 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 export class ArticleServiceAPI implements ArticleService {
 
     private articleUrl = 'http://api.chess.tdrs.me/';
+    // private articleUrl = 'http://api.chess.tdr/';
     private headers;
     private options;
 

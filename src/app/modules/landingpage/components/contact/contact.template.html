@@ -3,8 +3,9 @@
 		<h2 class="title"> Contact </h2>
 		<div class="col-sm-12 col-lg-6">
 			<div class="contact-info">
-				<img class="profile-picture" src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xat1/t31.0-8/12068613_983058688411685_6820040951749450518_o.jpg"
-				/>
+				<div class="profile-picture">
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+        </div>
 
 				<div class="info">
 					<div class="contact-field contact-name">
@@ -26,7 +27,7 @@
 		</div>
 		<div class="col-sm-12 col-lg-6">
 
-			<div class="contact-form">
+			<div class="row contact-form">
 
 				<form [formGroup]="form" (ngSubmit)="submitForm(form)">
 					<div class="form-group">
@@ -50,11 +51,15 @@
                     </div>
 				</form>
 
-				<div *ngIf="send === true">
-					Acest mesaj a fost trimis. Veti primi un raspuns in cel mai scurt timp.
-				</div>
 			</div>
-
+  <div class="row">
+    <div class="col-sm-12 alert alert-success" role="alert" [hidden]="status != 'success'">
+      Acest mesaj a fost trimis. Veti primi un raspuns in cel mai scurt timp.
+    </div>
+    <div class="col-sm-12 alert alert-danger" role="alert" [hidden]="status != 'error'">
+      A apărut o problemă, te rugăm să încerci din nou sau să ne contactezi prin email.
+    </div>
+  </div>
 		</div>
 	</div>
 </div>

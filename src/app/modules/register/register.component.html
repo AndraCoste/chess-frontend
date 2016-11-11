@@ -23,7 +23,7 @@
           </div>
 
           <div class="form-group" [ngClass]="{'has-danger':invalidField('email')}">
-            <input class="form-control" type="text" placeholder="Adresa ta de email"
+            <input class="form-control" type="email" placeholder="Adresa ta de email"
                    [formControl]="form.controls['email']">
 
           </div>
@@ -50,8 +50,12 @@
           </div>
 
           <div class="form-group">
-            <input type="checkbox" [formControl]="form.controls['legitimated']">
-            Legitimat
+            <label>
+              <input type="checkbox" [formControl]="form.controls['legitimated']">
+              Legitimat
+            </label>
+            <a href="#" tooltipPlacement="bottom" tooltip="Ce înseamnă legitimat?" onclick="return false;"> <i class="fa fa-question" aria-hidden="true"></i> </a>
+
           </div>
           <div class="form-group messages" [hidden]="loading || !invalidForm()">
             <div class="alert alert-warning" role="alert">
@@ -59,7 +63,7 @@
             </div>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-primary">Înregistrare</button>
+            <button type="submit" class="btn btn-default">Înregistrare</button>
             <!--[disabled]="loading || invalidForm()"-->
 
           </div>

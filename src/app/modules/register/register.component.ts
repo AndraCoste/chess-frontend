@@ -60,6 +60,7 @@ export class RegisterComponent implements OnInit{
           console.log("data", response);
           this.loading = false;
           this.successMessage = true;
+
           this.form.reset();
         },
         err=> {
