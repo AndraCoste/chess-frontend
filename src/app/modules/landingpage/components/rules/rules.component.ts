@@ -1,7 +1,7 @@
-import {Component, Inject, ViewChild} from "@angular/core";
+import {Component, ViewChild} from "@angular/core";
 import ArticleDataObject from "../../../../model/article-data-object";
-import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
 import {ModalDirective} from 'ng2-bootstrap/ng2-bootstrap';
+import {ArticleServiceAPI} from "../../../../services/article.service.api";
 
 
 @Component({
@@ -21,7 +21,7 @@ export class RulesArticle {
   };
 
 
-  constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService) {
+  constructor(private articleService: ArticleServiceAPI) {
     articleService.getArticle('rules').subscribe(
       data => {
         this.data = data;

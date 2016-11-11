@@ -1,7 +1,7 @@
 
-import {Component, Inject} from "@angular/core";
-import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
+import {Component} from "@angular/core";
 import ArticleDataObject from "../../../../model/article-data-object";
+import {ArticleServiceAPI} from "../../../../services/article.service.api";
 
 @Component({
     selector: 'banner',
@@ -19,8 +19,8 @@ export class Banner{
     };
 
 
-    constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService) {
-        articleService.getArticle('banner').subscribe(
+    constructor(private articleService: ArticleServiceAPI) {
+        this.articleService.getArticle('banner').subscribe(
             data => {this.data = data},
             err => {throw new Error('articleService Error: ')}
         )

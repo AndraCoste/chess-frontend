@@ -1,10 +1,10 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, Headers} from '@angular/http';
 
 
-import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {ModalModule} from 'ng2-bootstrap/ng2-bootstrap';
 import {RouterModule} from "@angular/router";
 import {LandingpageComponent} from "./landingpage.component";
 import {Contact} from "./components/contact/contact.component";
@@ -15,31 +15,31 @@ import {Partners} from "./components/partners/partners.component";
 import {RegistrationArticle} from "./components/registration/registration.component";
 import {RulesArticle} from "./components/rules/rules.component";
 import {CommonModule} from "@angular/common";
+import {ArticleServiceAPI} from "../../services/article.service.api";
 
 
 @NgModule({
-    declarations: [
-        LandingpageComponent,
-        RulesArticle,
-        RegistrationArticle,
-        Partners,
-        Banner,
-        PrevEditions,
-        AboutLigaAC,
-        Contact
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        ModalModule,
-        RouterModule,
-        CommonModule,
-        ReactiveFormsModule,
-    ],
-    providers: [
-    ],
-    bootstrap: [LandingpageComponent]
+  declarations: [
+    LandingpageComponent,
+    RulesArticle,
+    RegistrationArticle,
+    Partners,
+    Banner,
+    PrevEditions,
+    AboutLigaAC,
+    Contact
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    ModalModule,
+    RouterModule,
+    CommonModule,
+    ReactiveFormsModule,
+  ],
+  providers: [ArticleServiceAPI],
+  bootstrap: [LandingpageComponent]
 })
 export class LandingpageModule {
 }

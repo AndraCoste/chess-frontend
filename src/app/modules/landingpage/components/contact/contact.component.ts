@@ -1,6 +1,6 @@
-import {Component, Inject, OnInit} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {FormGroup, FormControl, FormBuilder, Validators} from "@angular/forms";
-import {ArticleService, ARTICLE_SERVICE} from "../../../../services/article.service";
+import {ArticleServiceAPI} from "../../../../services/article.service.api";
 
 @Component({
   selector: 'contact',
@@ -13,8 +13,7 @@ export class Contact implements OnInit {
 
   form: FormGroup;
 
-  constructor(@Inject(ARTICLE_SERVICE) private articleService: ArticleService,
-              private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private articleService: ArticleServiceAPI) {
   }
 
   submitForm(form: FormGroup) {
