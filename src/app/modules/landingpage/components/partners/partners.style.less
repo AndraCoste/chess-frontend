@@ -3,9 +3,13 @@
 
 .logos-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 
   img {
-    max-height: 125px;
+    max-height: 75px;
+    margin-top: 40px;
+  }
+  img:not(:first-child) {
+    margin-left: 70px;
   }
 }
