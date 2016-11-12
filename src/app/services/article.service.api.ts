@@ -7,7 +7,7 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 
 export class ArticleServiceAPI implements ArticleService {
 
-    private articleUrl = 'http://api.chess.tdrs.me/';
+    private backendUri = 'http://api.chess.ligaac.ro/';
     // private articleUrl = 'http://api.chess.tdr/';
     private headers;
     private options;
@@ -22,16 +22,16 @@ export class ArticleServiceAPI implements ArticleService {
 
 
     getAll() {
-        return this.http.get(this.articleUrl + 'api/Articles/All', this.options);
+        return this.http.get(this.backendUri + 'api/Articles/All', this.options);
     }
 
     getArticle(selector) {
-        return this.http.get(this.articleUrl + 'api/Articles/GetArticleBySelector?selector='+ selector, this.options).map(data =>{ return JSON.parse(data['_body'])})
+        return this.http.get(this.backendUri + 'api/Articles/GetArticleBySelector?selector='+ selector, this.options).map(data =>{ return JSON.parse(data['_body'])})
     }
 
 
     postContact(body) {
-        return this.http.post(this.articleUrl + 'api/Contacts/Add', body, this.options);
+        return this.http.post(this.backendUri + 'api/Contacts/Add', body, this.options);
     }
 
 }
