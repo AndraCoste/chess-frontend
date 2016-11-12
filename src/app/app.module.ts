@@ -29,7 +29,7 @@ import {ReactiveFormsModule, FormsModule} from "@angular/forms";
     HttpModule,
     ModalModule,
     DropdownModule,
-    RouterModule.forRoot(ROUTES, {useHash: true}),
+    RouterModule.forRoot(ROUTES),
 
     FormsModule,
     ReactiveFormsModule,

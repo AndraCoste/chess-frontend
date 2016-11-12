@@ -4,6 +4,6 @@ import {LandingpageComponent} from "./modules/landingpage/landingpage.component"
 import {RegisterComponent} from "./modules/register/register.component";
 
 export const ROUTES: Routes = [
-    {path: '', component: LandingpageComponent},
-    {path: 'inscriere', component: RegisterComponent}
+    {path: 'inscriere', component: RegisterComponent},
+    {path: '**', component: LandingpageComponent}
 ];

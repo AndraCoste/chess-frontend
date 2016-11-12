@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'landingpage',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./landingpage.component.less']
 })
 export class LandingpageComponent {
-  title = 'app works!';
+
 }
