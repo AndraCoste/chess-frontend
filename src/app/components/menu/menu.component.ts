@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
   private border: string;
   private menuState: boolean = false;
 
-  constructor(private router: Router, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: Document) {
+  constructor(private router: Router, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document) {
 
 
     this.setLandingPageStyle = this.setLandingPageStyle.bind(this);

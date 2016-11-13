@@ -11,4 +11,3 @@ export interface ArticleService{
     postContact(body);
 }
 
-export let ARTICLE_SERVICE = new OpaqueToken('app.article.service');

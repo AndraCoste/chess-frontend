@@ -1,7 +1,7 @@
 import ArticleDataObject from '../model/article-data-object'
 import {Injectable, Inject, Optional} from '@angular/core';
 import {ArticleService} from "./article.service";
-import {Http, Headers, RequestOptions} from "@angular/http";
+import {Http, Headers, RequestOptions, Response} from "@angular/http";
 import {Observable} from "rxjs";
 
 @Injectable()
