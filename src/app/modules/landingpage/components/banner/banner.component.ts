@@ -1,5 +1,5 @@
 
-import {Component} from "@angular/core";
+import {Component, HostListener} from "@angular/core";
 import ArticleDataObject from "../../../../model/article-data-object";
 import {ArticleServiceAPI} from "../../../../services/article.service.api";
 
@@ -25,4 +25,13 @@ export class Banner{
             err => {throw new Error('articleService Error: ')}
         )
     }
+
+  ngOnInit(): void {
+
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event:{target:Window}) {
+
+  }
 }

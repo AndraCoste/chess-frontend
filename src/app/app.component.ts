@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {PageScrollConfig} from 'ng2-page-scroll';
 
 @Component({
@@ -6,7 +6,7 @@ import {PageScrollConfig} from 'ng2-page-scroll';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent {
+export class AppComponent{
   constructor() {
     PageScrollConfig.defaultScrollOffset = 54;
     PageScrollConfig.defaultEasingLogic = {
@@ -19,4 +19,6 @@ export class AppComponent {
       }
     };
   }
+
+
 }

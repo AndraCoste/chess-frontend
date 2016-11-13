@@ -19,7 +19,8 @@ export class MenuComponent implements OnInit {
   private border: string;
   private menuState: boolean = false;
 
-  constructor(private router: Router, private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document) {
+  constructor(private router: Router, private pageScrollService: PageScrollService,
+              @Inject(DOCUMENT) private document) {
 
 
     this.setLandingPageStyle = this.setLandingPageStyle.bind(this);
@@ -52,12 +53,7 @@ export class MenuComponent implements OnInit {
       elementId = where.substr(1);
     }
 
-    // if (!this.document.getElementById(elementId)) {
-    setTimeout(() => this.scrollToElement('#' + elementId), 250);
-    // }
-    // else {
-    //   this.scrollToElement('#' + elementId);
-    // }
+    setTimeout(() => this.scrollToElement('#' + elementId), 1);
   }
 
   private scrollToElement(element: string): void {
