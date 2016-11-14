@@ -27,4 +27,7 @@ export class RegistrationServiceAPI{
     return this.http.post(this.backendUri + 'api/Applications/Register', model, this.options);
   }
 
+  getStatus():{closed:boolean, reason?:string} {
+    return {closed: true, reason: "Înscrierile vor începe pe 28 noiembrie."}
+  }
 }

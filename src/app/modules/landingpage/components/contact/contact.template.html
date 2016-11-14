@@ -1,65 +1,72 @@
 <div class="contact-component front-page-article">
-	<div class="container">
-		<h2 class="title"> Contact </h2>
-		<div class="col-sm-12 col-lg-6">
-			<div class="contact-info">
-				<div class="profile-picture">
+  <div class="container">
+    <h2 class="title"> Contact </h2>
+    <div class="col-sm-12 col-lg-6">
+      <div class="contact-info">
+        <div class="profile-picture">
           <i class="fa fa-user-o" aria-hidden="true"></i>
         </div>
 
-				<div class="info">
-					<div class="contact-field contact-name">
-						<span class="bold"> coordonator: </span>
-						<span> Horia COSTINA </span>
-					</div>
+        <div class="info">
+          <div class="contact-field contact-name">
+            <span class="bold"> coordonator: </span>
+            <span> Horia COSTINA </span>
+          </div>
 
-					<div class="contact-field contact-email">
-						<span class="bold"> email: </span>
-						<span> horia.costina@ligaac.ro </span>
-					</div>
+          <div class="contact-field contact-email">
+            <span class="bold"> email: </span>
+            <span> horia.costina@ligaac.ro </span>
+          </div>
 
-					<div class="contact-field contact-phone">
-						<span class="bold"> telefon: </span>
-						<span> +40 720 315 682 </span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-12 col-lg-6">
-
-			<div class="row contact-form">
-
-				<form [formGroup]="form" (ngSubmit)="submitForm(form)">
-					<div class="form-group">
-						<input placeholder="Nume" type="text" [formControl]="form.controls['name']" class="form-control">
-					</div>
-
-					<div class="form-group">
-						<input placeholder="Email" type="email" [formControl]="form.controls['email']" class="form-control">
-					</div>
-
-					<div class="form-group">
-						<input placeholder="Subiect" type="text" [formControl]="form.controls['subject']" class="form-control">
-					</div>
-
-					<div class="form-group">
-						<input placeholder="Mesaj" type="text" [formControl]="form.controls['message']" class="form-control">
-					</div>
-
-                    <div class="form-group">
-					    <button type="submit" [disabled]="!form.valid" class="btn btn-default">Trimite</button>
-                    </div>
-				</form>
-
-			</div>
-  <div class="row">
-    <div class="col-sm-12 alert alert-success" role="alert" [hidden]="status != 'success'">
-      Acest mesaj a fost trimis. Veti primi un raspuns in cel mai scurt timp.
+          <div class="contact-field contact-phone">
+            <span class="bold"> telefon: </span>
+            <span> +40 720 315 682 </span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-12 alert alert-danger" role="alert" [hidden]="status != 'error'">
-      A apărut o problemă, te rugăm să încerci din nou sau să ne contactezi prin email.
+    <div class="col-sm-12 col-lg-6">
+
+      <div class="row contact-form">
+
+        <form [formGroup]="form" (ngSubmit)="submitForm(form)">
+          <div class="form-group">
+            <input placeholder="Nume" type="text" [formControl]="form.controls['name']" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input placeholder="Email" type="email" [formControl]="form.controls['email']" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input placeholder="Subiect" type="text" [formControl]="form.controls['subject']" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input placeholder="Mesaj" type="text" [formControl]="form.controls['message']" class="form-control">
+          </div>
+          <div class="form-group">
+            <div class="alert alert-warning" role="alert" [hidden]="status != 'invalid'">
+              Nu ai completat corect toate câmpurile.
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="center-items">
+            <div class="loader" [hidden]="status != 'loading'"></div>
+            </div>
+            <button type="submit" class="btn btn-default" [hidden]="status == 'loading'">Trimite</button>
+          </div>
+        </form>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-12 alert alert-success" role="alert" [hidden]="status != 'success'">
+          Acest mesaj a fost trimis. Veti primi un raspuns in cel mai scurt timp.
+        </div>
+        <div class="col-sm-12 alert alert-danger" role="alert" [hidden]="status != 'error'">
+          A apărut o problemă, te rugăm să încerci din nou sau să ne contactezi prin email.
+        </div>
+      </div>
     </div>
   </div>
-		</div>
-	</div>
 </div>

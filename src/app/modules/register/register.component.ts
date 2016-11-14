@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit{
   private successMessage: boolean = false;
   private errorMessage: boolean = false;
 
+  private registrationStatus:any={};
 
   constructor(private fb: FormBuilder, private registrationService: RegistrationServiceAPI) {
   }
@@ -30,7 +31,7 @@ export class RegisterComponent implements OnInit{
       'legitimated': false,
     });
     // (this.minDate = new Date()).setDate(this.minDate.getDate() - 1000);
-
+    this.registrationStatus = this.registrationService.getStatus();
   }
 
 
@@ -62,6 +63,7 @@ export class RegisterComponent implements OnInit{
           this.successMessage = true;
 
           this.form.reset();
+          this.form.patchValue({birthDate: this.birthDate});
         },
         err=> {
           console.log("err", err);
@@ -69,7 +71,7 @@ export class RegisterComponent implements OnInit{
           this.errorMessage = true;
         }
       );
-    }, 1000);
+    }, 3000);
 
     // setTimeout(() => {
     //   this.loading = false;
@@ -98,10 +100,12 @@ export class RegisterComponent implements OnInit{
   }
 
 
+  birthDate: string="";
   birthDateChanged(eventArgs: any) {
     var dt = eventArgs;
     var dts = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
-    console.log(dts);
+    this.birthDate = dts;
+    // console.log(dts);
     this.form.patchValue({birthDate: dts});
   }
 }

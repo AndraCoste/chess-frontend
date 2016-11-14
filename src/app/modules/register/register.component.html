@@ -6,11 +6,18 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-6 padding-top" *ngIf="registrationStatus.closed">
+        <div class="sub-title">
+          {{registrationStatus.reason}}
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6" *ngIf="!registrationStatus.closed">
         <div class="title">
           <h2> Înscrie-te </h2>
         </div>
-        <form [formGroup]="form" class="form-horizontal" (ngSubmit)="submitForm(form)">
+
+        <form [formGroup]="form" class="form-horizontal" (ngSubmit)="submitForm(form)"
+              >
 
           <div class="form-group" [ngClass]="{'has-danger':invalidField('firstName')}">
             <input class="form-control" type="text" placeholder="Prenumele tău"
@@ -54,7 +61,7 @@
               <input type="checkbox" [formControl]="form.controls['legitimated']">
               Legitimat
             </label>
-            <a href="#" tooltipPlacement="bottom" tooltip="Ce înseamnă legitimat?" onclick="return false;"> <i class="fa fa-question" aria-hidden="true"></i> </a>
+            <a href="#" tooltipPlacement="bottom" tooltip="Jucător legitimat la F.R. Șah" onclick="return false;"> <i class="fa fa-question" aria-hidden="true"></i> </a>
 
           </div>
           <div class="form-group messages" [hidden]="loading || !invalidForm()">
@@ -63,7 +70,7 @@
             </div>
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-default">Înregistrare</button>
+            <button type="submit" class="btn btn-default" [disabled]="loading">Înregistrare</button>
             <!--[disabled]="loading || invalidForm()"-->
 
           </div>
@@ -79,11 +86,11 @@
         </form>
 
       </div>
-      <div class="horse col-xs-0 col-md-6"></div>
+      <div class="horse col-xs-0 col-md-6" [hidden]="registrationStatus.closed"></div>
     </div>
 
     <div class="row">
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-6 col-xs-12 center-items">
 
         <div class="loader" [hidden]="!loading">Loading...</div>
       </div>

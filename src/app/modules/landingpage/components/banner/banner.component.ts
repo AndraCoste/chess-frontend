@@ -2,6 +2,7 @@
 import {Component, HostListener} from "@angular/core";
 import ArticleDataObject from "../../../../model/article-data-object";
 import {ArticleServiceAPI} from "../../../../services/article.service.api";
+import {RegistrationServiceAPI} from "../../../../services/registration.service";
 
 @Component({
     selector: 'banner',
@@ -19,15 +20,16 @@ export class Banner{
     };
 
 
-    constructor(private articleService: ArticleServiceAPI) {
+    constructor(private articleService: ArticleServiceAPI, private registrationService: RegistrationServiceAPI) {
         this.articleService.getArticle('banner').subscribe(
             data => {this.data = data},
             err => {throw new Error('articleService Error: ')}
         )
     }
 
+    registrationStatus:any={};
   ngOnInit(): void {
-
+    this.registrationStatus = this.registrationService.getStatus();
   }
 
   @HostListener('window:resize', ['$event'])

@@ -24,7 +24,7 @@ app-root>.loader-image {
 }
 
 
-app-root>.loader-image>.loader-horse {
+.loader-horse {
   width: 150px;
   height: 150px;
 
@@ -71,3 +71,4 @@ app-root>.loader-image>.loader-horse {
     transform:rotate(360deg);
   }
 }
+

@@ -17,17 +17,26 @@ export class Contact implements OnInit {
   }
 
   submitForm(form: FormGroup) {
-    this.status = 'none';
-    this.articleService.postContact(form.value).subscribe(
-      data => {
-        this.status = 'success';
-        form.reset();
-      },
-      err => {
-        this.status = 'error';
-        throw Error("contact form error")
-      }
-    );
+    if(this.invalidForm()){
+      this.status = "invalid";
+      return;
+    }
+
+    this.status = 'loading';
+    setTimeout(() => {
+
+      this.articleService.postContact(form.value).subscribe(
+        data => {
+          this.status = 'success';
+          form.reset();
+        },
+        err => {
+          this.status = 'error';
+          throw Error("contact form error")
+        }
+      );
+
+    }, 3000);
   }
 
   ngOnInit() {
@@ -37,5 +46,18 @@ export class Contact implements OnInit {
       'subject': ['', Validators.required],
       'message': ['', Validators.required]
     });
+  }
+  invalidForm() {
+    for (var i in this.form.controls) {
+      if (this.invalidField(i)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  invalidField(fieldName: string): boolean {
+    var res = !this.form.controls[fieldName].valid && this.form.controls[fieldName].touched;
+    // console.log("res for " + fieldName + " is " + res);
+    return res;
   }
 }
